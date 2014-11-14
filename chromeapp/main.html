@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Ill Kept - La Chèvre Noire 2014</title>
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/bootstrap-slider.css" rel="stylesheet">
+    <link href="css/main.css" rel="stylesheet">
+</head>
+
+<body>
+    <table class="table" id="overview">
+        <thead>
+            <tr id="header" class="info"></tr>
+        </thead>
+        <tbody id="tbody">
+
+        </tbody>
+        <tfoot>
+            <tr id="foot" class="info"></tr>
+        </tfoot>
+    </table>
+
+    <div class="modal" id="connectbox">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                    <h4 class="modal-title">Port de connexion</h4>
+                </div>
+                <div class="modal-body">
+                    <select class='form-control' id="connect"></select>
+
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" id="start">Connect</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="lastcmd" class="form-control col-lg-8">ici</div>
+    <div id="status" class="label label-danger"
+    style="position:fixed;bottom:15px;right:15px;padding-left:15px;padding-right:15px;">not connected</div>
+    <script src="js/jquery.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/bootstrap-slider.js"></script>
+    <script src="js/ui.js"></script>
+    <script src="js/serial.js"></script>
+    <script src="js/main.js"></script>
+</body>
+
+</html>

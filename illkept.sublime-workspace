@@ -1,0 +1,269 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"analog",
+				"analogWrite	Arduino analogWrite"
+			],
+			[
+				"dit",
+				"digitalWrite	Arduino digitalWrite"
+			],
+			[
+				"line",
+				"lineBuffer"
+			],
+			[
+				"_",
+				"_0"
+			],
+			[
+				"bu",
+				"buttonUpdate"
+			],
+			[
+				"slide",
+				"slideUpdate"
+			],
+			[
+				"tr",
+				"tr5"
+			],
+			[
+				"append",
+				"appendTo"
+			],
+			[
+				"bode",
+				"border"
+			],
+			[
+				"th",
+				"thead	Tag"
+			],
+			[
+				"text",
+				"text-align"
+			],
+			[
+				"a",
+				"append"
+			],
+			[
+				"bc",
+				"background-color"
+			],
+			[
+				"font",
+				"font-size"
+			]
+		]
+	},
+	"buffers":
+	[
+	],
+	"build_system": "",
+	"command_palette":
+	{
+		"height": 392.0,
+		"selected_items":
+		[
+			[
+				"inst",
+				"Package Control: Install Package"
+			]
+		],
+		"width": 467.0
+	},
+	"console":
+	{
+		"height": 0.0,
+		"history":
+		[
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"expanded_folders":
+	[
+		"/home/dolivari/dev/illkept",
+		"/home/dolivari/dev/illkept/arduino",
+		"/home/dolivari/dev/illkept/arduino/IKBag",
+		"/home/dolivari/dev/illkept/arduino/IKcontroler",
+		"/home/dolivari/dev/illkept/arduino/testL298",
+		"/home/dolivari/dev/illkept/chromeapp",
+		"/home/dolivari/dev/illkept/chromeapp/js"
+	],
+	"file_history":
+	[
+		"/home/dolivari/dev/illkept/chromeapp/js/serial.js",
+		"/home/dolivari/dev/illkept/arduino/IKcontroler/IKcontroler.ino",
+		"/home/dolivari/dev/illkept/arduino/IKBag/IKBag.ino",
+		"/home/dolivari/dev/illkept/chromeapp/js/ui.js",
+		"/home/dolivari/dev/illkept/chromeapp/js/main.js",
+		"/home/dolivari/dev/illkept/chromeapp/main.html",
+		"/run/user/1000/gvfs/sftp:host=sftp.dc0.gpaas.net,user=1516282/vhosts/www.deslies.org/htdocs/index.html",
+		"/home/dolivari/dev/illkept/chromeapp/manifest.json",
+		"/home/dolivari/dev/editedclock/chromeapp/main.js",
+		"/home/dolivari/dev/illkept/chromeapp/background.js",
+		"/home/dolivari/dev/editedclock/chromeapp/serial.js",
+		"/home/dolivari/dev/illkept/chromeapp/css/bootstrap-slider.css",
+		"/home/dolivari/dev/illkept/chromeapp/css/main.css",
+		"/home/dolivari/dev/editedclock/chromeapp/main.html",
+		"/mnt/spare/Dropbox/Partages/partageDavidAgnès/auzoo.xml",
+		"/home/dolivari/.config/sublime-text-3/Packages/JSHint Gutter/JSHint.sublime-settings",
+		"/home/dolivari/dev/illkept/chromeapp/css/bootstrap.min.css",
+		"/home/dolivari/.config/sublime-text-3/Packages/HTML-CSS-JS Prettify/HTMLPrettify.sublime-settings",
+		"/home/dolivari/dev/apimtnlab/counter.js",
+		"/home/dolivari/dev/apimtnlab/www/counters/js/main.js",
+		"/home/dolivari/dev/apimtnlab/www/counters/css/style.css",
+		"/home/dolivari/dev/apimtnlab/www/counters/index.html",
+		"/home/dolivari/dev/ticket-lapanacee/routes/ticket.js",
+		"/home/dolivari/dev/crFustibal/public/js/rtdata.js",
+		"/home/dolivari/dev/apimtnlab/www/index.html",
+		"/home/dolivari/dev/apimtnlab/apimtnlab.js",
+		"/home/dolivari/dev/crFustibal/views/index.jade"
+	],
+	"find":
+	{
+		"height": 23.0
+	},
+	"find_in_files":
+	{
+		"height": 90.0,
+		"where_history":
+		[
+			""
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"unConnected",
+			"'",
+			"'\n"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+			"\""
+		],
+		"reverse": false,
+		"show_context": false,
+		"use_buffer2": false,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"sheets":
+			[
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 23.0
+	},
+	"input":
+	{
+		"height": 49.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.IKBag":
+	{
+		"height": 100.0
+	},
+	"output.IKcontroler":
+	{
+		"height": 100.0
+	},
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"output.stino_log":
+	{
+		"height": 100.0
+	},
+	"project": "illkept.sublime-project",
+	"replace":
+	{
+		"height": 62.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_symbol":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"selected_group": 0,
+	"settings":
+	{
+	},
+	"show_minimap": true,
+	"show_open_files": false,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 161.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}
