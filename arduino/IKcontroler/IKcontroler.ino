@@ -33,6 +33,7 @@ byte addresses[][7] = {
 byte bagStatus[10][3];
 
 unsigned long lastTime;
+unsigned long lastUpdate[10];
 
 void setup() {
 
@@ -44,22 +45,45 @@ void setup() {
   radio.setAutoAck(1);                    // Ensure autoACK is enabled
   radio.setRetries(15,15);                // Max delay between retries & number of retries
   radio.openReadingPipe(1,addresses[0]);
- radio.startListening();
-              // Start listening
+  radio.startListening();
+  // Start listening
   for(byte b=0;b<10;b++){
-    bagStatus[b][0]=12;
+    bagStatus[b][0]=0;
     bagStatus[b][1]=0;
     bagStatus[b][2]=0;
+    lastUpdate[b]=millis();
   } 
   lastTime = millis();
+
+  pinMode(9,INPUT);
+  digitalWrite(9,HIGH);
 }
 
 byte slave[] = "Bag0";
 
 void loop(void){
+
+  if(LOW == digitalRead(9)){
+    radio.stopListening(); 
+    for(byte b=0;b<10;b++){
+      char buf[12]={
+        'B','0'+b,'M','0','D','0',0,0,0,0,0,'E'                                  };
+      slave[3]= '0'+b;
+      radio.openWritingPipe(slave);
+      radio.write(buf,12);
+      delay(50);
+      buf[3]='1';
+      radio.write(buf,12);
+      delay(25);
+
+    }
+    printf("{\"lastcmd\":\"reset\"}\n");
+    radio.startListening();
+  }
+
   if (6<Serial.available())  { 
     char buf[12]={
-      0,0,0,0,0,0,0,0,0,0,0,0        };
+      0,0,0,0,0,0,0,0,0,0,0,0                                };
     Serial.readBytesUntil('E',buf,12);
     if(('B'==buf[0])&& 'M'==buf[2]){
       byte b = buf[1]-'0';
@@ -77,6 +101,15 @@ void loop(void){
   } 
 
   if(1000<(millis()-lastTime)){
+
+    for(byte b=0;b<10;b++){
+      if(12000 < (millis() -lastUpdate[b] )){
+        bagStatus[b][0]=64;
+        bagStatus[b][1]=0;
+        bagStatus[b][2]=0;
+      }
+    }
+
     lastTime = millis();
     printf("{\"connected\":true,\"bag\":[");
     for(byte b=0;b<10;b++){
@@ -90,17 +123,26 @@ void loop(void){
 
   if(radio.available()){
     while (radio.available()) {    
-      byte pkt[] = {0,0,0,0};
+      byte pkt[] = {
+        0,0,0,0                                    };
       radio.read( pkt, 4 );             
       bagStatus[pkt[0]][0]=pkt[3];
       bagStatus[pkt[0]][1]=pkt[1];
       bagStatus[pkt[0]][2]=pkt[2];
       printf("{\"lastcmd\":\"bag %d csa : %d csb : %d  volt : %d\"}\n",pkt[0],pkt[1],pkt[2],pkt[3]);
-          
+      lastUpdate[pkt[0]] = millis();
     }  
   }
 
+
+
 }
+
+
+
+
+
+
 
 
 
