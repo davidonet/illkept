@@ -95,18 +95,38 @@ var onReadLine = function(line) {
         $("#status").text("Connected");
         $("#status").removeClass("label-danger");
         $("#status").addClass("label-success");
-
     }
     if (statusArduino.bag) {
         for (var i = statusArduino.bag.length - 1; i >= 0; i--) {
+            $("#m_v" + i).removeClass("alert alert-danger alert-warning text-success");
             var b = statusArduino.bag[i];
-            $("#m_v" + i).text(b.v);
-            $("#m_m0" + i).text(b.m0);
-            $("#m_m1" + i).text(b.m1);
+            if (64 == b.v) {
+                $("#m_v" + i).text("###");
+                $("#m_v" + i).addClass("alert alert-warning");
+                $("#m_m0" + i).text("##");
+                $("#m_m1" + i).text("##");
+            } else {
+                var v = 0;
+                if (64 < b.v) {
+                    v = b.v;
+                    if (b.v < 220)
+                        $("#m_v" + i).addClass("alert alert-danger");
+                } else {
+                    v = "max";
+                    $("#m_v" + i).addClass("text-success");
+                }
+
+                $("#m_v" + i).text(v);
+                $("#m_m0" + i).text(b.m0);
+                $("#m_m1" + i).text(b.m1);
+            }
         };
     }
     if (statusArduino.lastcmd) {
         $("#lastcmd").text(statusArduino.lastcmd);
+        console.log(statusArduino.lastcmd);
+        if(statusArduino.lastcmd == "reset")
+            resetMotors(0);
     }
     connectedTimer = setTimeout(function() {
         $("#status").text("Not connected");
@@ -131,8 +151,9 @@ var onReceiveCallback = function(receiveInfo) {
     }
 };
 
-var sendCommand = function(cmd) {
-    chrome.serial.send(aConnectionId, str2ab(cmd), function() {
+var sendCommand = function(cmd, done) {
+    chrome.serial.send(aConnectionId, str2ab(cmd), function(done) {
         $("#status").text("Command sent");
+        done();
     });
 };
