@@ -11,42 +11,137 @@
 </head>
 
 <body>
-    <table class="table" id="overview">
-        <thead>
-            <tr id="header" class="info"></tr>
-        </thead>
-        <tbody id="tbody">
+    <ul class="nav nav-tabs">
+        <li role="presentation" class="active"><a href="#manual" aria-controls="manual" role="tab" data-toggle="tab">Manual mode</a>
+        </li>
+        <li role="presentation"><a href="#programs" aria-controls="programs" role="tab" data-toggle="tab">Programs mode</a>
+        </li>
+    </ul>
+    <div class="tab-content">
+        <div class="tab-pane active" role="tabpanel" id="manual">
+            <table class="table" id="overview">
+                <thead>
+                    <tr id="header" class="info"></tr>
+                </thead>
+                <tbody id="tbody">
 
-        </tbody>
-        <tfoot>
-            <tr id="foot" class="info"></tr>
-        </tfoot>
-    </table>
+                </tbody>
+                <tfoot>
+                    <tr id="foot" class="info"></tr>
+                </tfoot>
+            </table>
 
-    <div class="modal" id="connectbox">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-                    <h4 class="modal-title">Port de connexion</h4>
+            <div class="modal" id="connectbox">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                            <h4 class="modal-title">Port de connexion</h4>
+                        </div>
+                        <div class="modal-body">
+                            <select class='form-control' id="connect"></select>
+
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-default" id="start">Connect</button>
+                        </div>
+                    </div>
                 </div>
-                <div class="modal-body">
-                    <select class='form-control' id="connect"></select>
+            </div>
+        </div>
+        <div id="programs" class="tab-pane" role="tabpanel">
+            <div id="launcher" class="container">
+                <div class="row">
 
+                    <div class="col-md-12">
+                        <div class="panel panel-default" id="prog0">
+                            <div class="panel-heading">
+                                Sequence starter
+                            </div>
+                            <div class="panel-body">
+                                <p>Start a complex sequence on a specific bag</p>
+                                <p>
+                                    <center>
+                                        <div class="btn-group">
+                                            <a href="#" bag="0" class="btn btn-primary btn-lg seqstart">0 <span class="badge">0</span></a>
+                                            <a href="#" bag="1" class="btn btn-primary btn-lg seqstart">1 <span class="badge">0</span></a>
+                                            <a href="#" bag="2" class="btn btn-primary btn-lg seqstart">2 <span class="badge">0</span></a>
+                                            <a href="#" bag="3" class="btn btn-primary btn-lg seqstart">3 <span class="badge">0</span></a>
+                                            <a href="#" bag="4" class="btn btn-primary btn-lg seqstart">4 <span class="badge">0</span></a>
+                                            <a href="#" bag="5" class="btn btn-primary btn-lg seqstart">5 <span class="badge">0</span></a>
+                                            <a href="#" bag="6" class="btn btn-primary btn-lg seqstart">6 <span class="badge">0</span></a>
+                                            <a href="#" bag="7" class="btn btn-primary btn-lg seqstart">7 <span class="badge">0</span></a>
+                                            <a href="#" bag="8" class="btn btn-primary btn-lg seqstart">8 <span class="badge">0</span></a>
+                                            <a href="#" bag="9" class="btn btn-primary btn-lg seqstart">9 <span class="badge">0</span></a>
+                                        </div>
+                                    </center>
+                                </p>
+
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-default" id="start">Connect</button>
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="panel panel-default" id="prog0">
+                            <div class="panel-heading">
+                                Sparse
+                            </div>
+                            <div class="panel-body">
+                                <p>Short time spaced movement.</p>
+                                <p>
+                                    <center>
+                                        <div class="btn-group">
+                                            <a href="#" class="btn btn-default disabled">0</a>
+                                            <a href="#" class="btn btn-default disabled">1</a>
+                                            <a href="#" class="btn btn-default disabled">2</a>
+                                            <a href="#" class="btn btn-default disabled">3</a>
+                                            <a href="#" class="btn btn-default disabled">4</a>
+                                            <a href="#" class="btn btn-default disabled">5</a>
+                                            <a href="#" class="btn btn-default disabled">6</a>
+                                            <a href="#" class="btn btn-default disabled">7</a>
+                                            <a href="#" class="btn btn-default disabled">8</a>
+                                            <a href="#" class="btn btn-default disabled">9</a>
+                                        </div>
+                                    </center>
+                                </p>
+                                <button class="btn btn-success btn-lg">Start</button>
+                                <button class="btn btn-warning btn-lg pull-right disabled">Stop</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="panel panel-default" id="prog1">
+                            <div class="panel-heading">
+                                Managed chaos
+                            </div>
+                            <div class="panel-body">
+                                <p>Complete dense random actions</p>
+                                <div class="form-group">
+                                    <label for="prog1actdur">Movement duration</label>
+                                    <input type="number" class="form-control" id="prog1actdur" min="10" max="30" step="5" value="15">
+                                </div>
+                                <div class="form-group">
+                                    <label for="prog1lapsedur">Time between movement start</label>
+                                    <input type="number" class="form-control" id="prog1lapsedur" min="10" max="60" step="5" value="20">
+                                </div>
+                                <button class="btn btn-success btn-lg">Start</button>
+                                <button class="btn btn-warning btn-lg pull-right disabled">Stop</button>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
-    <div id="lastcmd" class="form-control col-lg-8">ici</div>
+    <div id="lastcmd" class="form-control" style="position:fixed;width:75%;bottom:15px;left:15px;">ici</div>
     <div id="status" class="label label-danger" style="position:fixed;bottom:15px;right:15px;padding-left:15px;padding-right:15px;">not connected</div>
     <script src="js/jquery.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
     <script src="js/bootstrap-slider.js"></script>
     <script src="js/ui.js"></script>
     <script src="js/serial.js"></script>
+    <script src="js/automata.js"></script>
     <script src="js/main.js"></script>
 </body>
 

@@ -7,7 +7,7 @@ int addr = 0;
 void setup()
 {
   EEPROM.write(0,'B');
-  EEPROM.write(1,0);
+  EEPROM.write(1,9);
   char * txt="La Chevre Noire";
   for(int i = 0; i<15;i++)
     EEPROM.write(i+2,txt[i]);

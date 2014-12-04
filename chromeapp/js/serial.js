@@ -40,23 +40,6 @@ var str2ab = function(str) {
 
 var aConnectionId;
 
-/* Interprets an ArrayBuffer as UTF-8 encoded string data. */
-var ab2str = function(buf) {
-    var bufView = new Uint8Array(buf);
-    var encodedString = String.fromCharCode.apply(null, bufView);
-    return decodeURIComponent(escape(encodedString));
-};
-
-/* Converts a string to UTF-8 encoding in a Uint8Array; returns the array buffer. */
-var str2ab = function(str) {
-    var encodedString = unescape(encodeURIComponent(str));
-    var bytes = new Uint8Array(encodedString.length);
-    for (var i = 0; i < encodedString.length; ++i) {
-        bytes[i] = encodedString.charCodeAt(i);
-    }
-    return bytes.buffer;
-};
-
 
 var onGetDevices = function(ports) {
     console.log('onGetDevices');
@@ -75,6 +58,11 @@ var onConnect = function(connectionInfo) {
     }
     $("#connectbox").modal('hide');
     chrome.serial.onReceive.addListener(onReceiveCallback);
+    chrome.serial.setControlSignals(aConnectionId, {
+        "dtr": true
+    }, function() {
+        console.log("reset sent");
+    })
 };
 
 $('#start').click(function() {
@@ -124,8 +112,7 @@ var onReadLine = function(line) {
     }
     if (statusArduino.lastcmd) {
         $("#lastcmd").text(statusArduino.lastcmd);
-        console.log(statusArduino.lastcmd);
-        if(statusArduino.lastcmd == "reset")
+        if (statusArduino.lastcmd == "reset")
             resetMotors(0);
     }
     connectedTimer = setTimeout(function() {
@@ -152,8 +139,22 @@ var onReceiveCallback = function(receiveInfo) {
 };
 
 var sendCommand = function(cmd, done) {
-    chrome.serial.send(aConnectionId, str2ab(cmd), function(done) {
+    chrome.serial.send(aConnectionId, str2ab(cmd), function() {
         $("#status").text("Command sent");
+        // console.log("sent", cmd);
         done();
     });
+};
+
+var sendCombineCommand = function(cmds, done) {
+    if (0 < cmds.length) {
+        // console.log("sendCombineCommand", cmds);
+        sendCommand(cmds.shift(), function() {
+            setTimeout(function() {
+                sendCombineCommand(cmds, done);
+            }, 50);
+        });
+    } else {
+        done();
+    }
 };
