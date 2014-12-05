@@ -4,6 +4,14 @@
 		"selected_items":
 		[
 			[
+				"monitor",
+				"monitoron"
+			],
+			[
+				"sen",
+				"sendCombineCommand"
+			],
+			[
 				"ac",
 				"activeBags"
 			],
@@ -111,15 +119,7 @@
 			"file": "chromeapp/main.html",
 			"settings":
 			{
-				"buffer_size": 8145,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "chromeapp/js/serial.js",
-			"settings":
-			{
-				"buffer_size": 5141,
+				"buffer_size": 8627,
 				"line_ending": "Unix"
 			}
 		},
@@ -127,7 +127,23 @@
 			"file": "chromeapp/js/automata.js",
 			"settings":
 			{
-				"buffer_size": 3282,
+				"buffer_size": 5222,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "arduino/IKBag/IKBag.ino",
+			"settings":
+			{
+				"buffer_size": 5773,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "chromeapp/js/serial.js",
+			"settings":
+			{
+				"buffer_size": 4596,
 				"line_ending": "Unix"
 			}
 		}
@@ -182,13 +198,13 @@
 	],
 	"file_history":
 	[
-		"/home/dolivari/.config/sublime-text-3/Packages/JSHint Gutter/JSHint.sublime-settings",
 		"/home/dolivari/dev/illkept/chromeapp/js/serial.js",
+		"/home/dolivari/dev/illkept/arduino/IKcontroler/IKcontroler.ino",
+		"/home/dolivari/.config/sublime-text-3/Packages/JSHint Gutter/JSHint.sublime-settings",
 		"/home/dolivari/dev/illkept/chromeapp/css/main.css",
 		"/home/dolivari/dev/illkept/chromeapp/js/main.js",
 		"/home/dolivari/dev/illkept/chromeapp/js/ui.js",
 		"/home/dolivari/dev/illkept/chromeapp/main.html",
-		"/home/dolivari/dev/illkept/arduino/IKcontroler/IKcontroler.ino",
 		"/home/dolivari/dev/illkept/arduino/IKBag/IKBag.ino",
 		"/home/dolivari/.config/sublime-text-3/Packages/SublimeAStyleFormatter/Default (Linux).sublime-keymap",
 		"/home/dolivari/.config/sublime-text-3/Packages/User/Default (Linux).sublime-keymap",
@@ -219,7 +235,7 @@
 	],
 	"find":
 	{
-		"height": 23.0
+		"height": 34.0
 	},
 	"find_in_files":
 	{
@@ -256,7 +272,7 @@
 	"groups":
 	[
 		{
-			"selected": 1,
+			"selected": 2,
 			"sheets":
 			[
 				{
@@ -265,51 +281,15 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 8145,
+						"buffer_size": 8627,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								2709,
-								2709
-							],
-							[
-								2848,
-								2848
-							],
-							[
-								2987,
-								2987
-							],
-							[
-								3126,
-								3126
-							],
-							[
-								3265,
-								3265
-							],
-							[
-								3404,
-								3404
-							],
-							[
-								3543,
-								3543
-							],
-							[
-								3682,
-								3682
-							],
-							[
-								3821,
-								3821
-							],
-							[
-								3960,
-								3960
+								6412,
+								6412
 							]
 						],
 						"settings":
@@ -319,27 +299,85 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 954.0,
+						"translation.y": 2260.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 2,
+					"stack_index": 3,
 					"type": "text"
 				},
 				{
 					"buffer": 1,
-					"file": "chromeapp/js/serial.js",
+					"file": "chromeapp/js/automata.js",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 5141,
+						"buffer_size": 5222,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								4797,
-								4797
+								4111,
+								4111
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 2760.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "arduino/IKBag/IKBag.ino",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 5773,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								3804,
+								3804
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/C++/C++.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": -0.0,
+						"translation.y": 3300.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "chromeapp/js/serial.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 4596,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								3414,
+								3414
 							]
 						],
 						"settings":
@@ -349,38 +387,10 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 2615.0,
+						"translation.y": 1580.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 0,
-					"type": "text"
-				},
-				{
-					"buffer": 2,
-					"file": "chromeapp/js/automata.js",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 3282,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								2293,
-								2293
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/JavaScript/JavaScript.tmLanguage"
-						},
-						"translation.x": 0.0,
-						"translation.y": 1350.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 1,
+					"stack_index": 2,
 					"type": "text"
 				}
 			]
@@ -471,7 +481,7 @@
 	"show_open_files": false,
 	"show_tabs": true,
 	"side_bar_visible": true,
-	"side_bar_width": 50.0,
+	"side_bar_width": 307.0,
 	"status_bar_visible": true,
 	"template_settings":
 	{

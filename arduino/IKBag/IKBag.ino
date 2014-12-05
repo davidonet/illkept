@@ -1,26 +1,3 @@
-
-
-/*
- Copyright (C) 2011 J. Coliz <maniacbug@ymail.com>
-
- This program is free software; you can redistribute it and/or
- modify it under the terms of the GNU General Public License
- version 2 as published by the Free Software Foundation.
- //2014 - TMRh20 - Updated along with Optimized RF24 Library fork
- */
-
-/**
- * Example for Getting Started with nRF24L01+ radios.
- *
- * This is an example of how to use the RF24 class to communicate on a basic level.  Write this sketch to two
- * different nodes.  Put one of the nodes into 'transmit' mode by connecting with the serial monitor and
- * sending a 'T'.  The ping node sends the current time to the pong node, which responds by sending the value
- * back.  The ping node can then see how long the whole cycle took.
- * Note: For a more efficient call-response scenario see the GettingStarted_CallResponse.ino example.
- * Note: When switching between sketches, the radio may need to be powered down to clear settings that are not "un-set" otherwise
- */
-
-
 #include <SPI.h>
 #include "nRF24L01.h"
 #include "RF24.h"
@@ -129,7 +106,7 @@ void setup()
     radio.setRetries(15, 15);               // Max delay between retries & number of retries
     radio.openWritingPipe(addresses[2]);
     radio.openReadingPipe(1, addresses[0]);
-    radio.openReadingPipe(2, addresses[0]);
+    radio.openReadingPipe(2, addresses[1]);
 
     radio.startListening();                 // Start listening
     radio.printDetails();                   // Dump the configuration of the rf unit for debugging
@@ -200,7 +177,6 @@ void pulse(byte m, int val)
         digitalWrite(IN1, LOW);
         digitalWrite(IN2, LOW);
         analogWrite(ENA, 0);
-        delay(val);
     }
     else
     {

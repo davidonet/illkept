@@ -97,7 +97,7 @@ var onReadLine = function(line) {
                 var v = 0;
                 if (64 < b.v) {
                     v = b.v;
-                    if (b.v < 220)
+                    if (b.v < 200)
                         $("#m_v" + i).addClass("alert alert-danger");
                 } else {
                     v = "max";
