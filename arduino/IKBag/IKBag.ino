@@ -8,7 +8,7 @@
 RF24 radio(7, 8);
 byte addresses[][7] =
 {
-    "Bag0", "BagA", "Master"
+    "Bag0", "Master"
 };
 
 
@@ -104,9 +104,8 @@ void setup()
     radio.begin();                          // Start up the radio
     radio.setAutoAck(1);                    // Ensure autoACK is enabled
     radio.setRetries(15, 15);               // Max delay between retries & number of retries
-    radio.openWritingPipe(addresses[2]);
+    radio.openWritingPipe(addresses[1]);
     radio.openReadingPipe(1, addresses[0]);
-    radio.openReadingPipe(2, addresses[1]);
 
     radio.startListening();                 // Start listening
     radio.printDetails();                   // Dump the configuration of the rf unit for debugging
@@ -202,7 +201,7 @@ void loop(void)
     cur[1][i] = analogRead(CSB);
     cur[2][i] = analogRead(VLT);
     i = (i + 1) % 16;
-    int sum[3] =
+    unsigned long sum[3] =
     {
         0, 0, 0
     };
@@ -222,13 +221,13 @@ void loop(void)
         pkt[0] = EEPROM.read(1);
         pkt[1] = sum[0] >> 4;
         pkt[2] = sum[1] >> 4;
-        pkt[3] = sum[2] >> 4;
+        pkt[3] = ((sum[2] >> 6) < 128 ? 0 : (sum[2] >> 6)-128);
         if (120 < pkt[1])
             run(0, 0);
         if (120 < pkt[2])
             run(1, 0);
         radio.stopListening();
-        printf("bag %d csa : %d csb : %d  volt : %d\n\r", pkt[0], pkt[1], pkt[2], pkt[3]);
+        printf("bag %d csa : %d csb : %d  volt : %d, %d\n\r", pkt[0], pkt[1], pkt[2], pkt[3],sum[2] >> 4);
         radio.write(pkt, 4);
         radio.startListening();
     }
