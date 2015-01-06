@@ -58,7 +58,7 @@ void setup()
         lastUpdate[b] = millis();
     }
     lastTime = millis();
-
+    //radio.printDetails();
     pinMode(9, INPUT);
     digitalWrite(9, HIGH);
 }
@@ -92,14 +92,15 @@ void loop(void)
 
     if (3 < Serial.available())
     {
-        while(Serial.read() != 'B'){
+        while (Serial.read() != 'B')
+        {
 
         }
         char buf[12] =
         {
             'B', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0
         };
-        Serial.readBytesUntil('E', buf+1, 12);
+        Serial.readBytesUntil('E', buf + 1, 12);
         if (('B' == buf[0]) && 'M' == buf[2])
         {
             byte b = buf[1] - '0';
