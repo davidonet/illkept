@@ -23,11 +23,11 @@ function shuffle(array) {
 
 var Automata = function(elt) {
     this.elt = $(elt);
-    this.drawing = new Array();
+    this.drawing = [];
     this.total_duration = 0;
     this.running = false;
     this.bag_num = this.elt.attr("bag");
-}
+};
 
 Automata.prototype.initSeq = function(nbseq) {
     for (var n = 0; n < nbseq; n++) {
@@ -59,10 +59,36 @@ Automata.prototype.initSparse = function(nbseq) {
             cmd: ["B" + bag + "M" + motor + "D0E"],
             duration: wait,
             monitor: $("#sparse" + bag)
-        })
+        });
         this.total_duration += (dur + wait);
         this.bag_num = bag;
     }
+};
+
+var runningList = [];
+
+Automata.prototype.initIntensity = function(percent) {
+    var bag = Math.floor(Math.random() * 10);
+    while (-1 < runningList.indexOf(bag))
+        bag = Math.floor(Math.random() * 10);
+    var motor = Math.floor(Math.random() * 2);
+    var pow = (Math.random() < .5 ? -100 : 100);
+    var dur = 1 + Math.floor((Math.random() * 10 * percent) / 100);
+    var wait = 1 + Math.floor((Math.random() * 10 * (100 - percent)) / 100);
+    this.drawing.push({
+        bag: bag,
+        cmd: ["B" + bag + "M" + motor + "D" + pow + "E"],
+        duration: dur,
+        monitor: $("#sparse" + bag)
+    });
+    this.drawing.push({
+        bag: bag,
+        cmd: ["B" + bag + "M" + motor + "D0E"],
+        duration: wait,
+        monitor: $("#sparse" + bag)
+    });
+    this.total_duration += (dur + wait);
+    this.bag_num = bag;
 };
 
 Automata.prototype.sendCurrent = function(done) {
@@ -80,6 +106,7 @@ Automata.prototype.start = function(done) {
     this.running = true;
     this.sendCurrent(done);
     this.elt.find('.badge').text(this.remaining);
+    runningList.push(this.bag_num);
 };
 
 Automata.prototype.step = function(done) {
@@ -113,8 +140,10 @@ Automata.prototype.stop = function(done) {
 };
 
 var activeBags = [];
+var nextMeta = function() {};
 
 $(".seqstart").click(function() {
+    nextMeta = function() {};
     $(this).removeClass("btn-primary");
     $(this).addClass("btn-success disabled");
     var myAuto = new Automata(this);
@@ -128,8 +157,8 @@ $("#seqstop").click(function() {
     stopBags(activeBags.slice(0), function() {});
 });
 
-
 $("#sparsestart").click(function() {
+    nextMeta = function() {};
     $(this).addClass("disabled");
     var myAuto = new Automata(this);
     myAuto.initSparse(16);
@@ -145,13 +174,41 @@ $("#sparsestop").click(function() {
     });
 });
 
+$("#intensitystart").click(function() {
+    $(this).addClass("disabled");
+    var intensity = $("#actintensity").data("slider").getValue();
+    for (var i = 0; i < (intensity / 10); i++) {
+        var myAuto = new Automata(this);
+        myAuto.initIntensity(intensity);
+        activeBags.push(myAuto);
+        myAuto.start(function() {});
+    }
+    nextMeta = function() {
+        var intensity = $("#actintensity").data("slider").getValue();
+        while (runningList.length < (intensity / 10)) {
+            var myAuto = new Automata(this);
+            myAuto.initIntensity(intensity);
+            activeBags.push(myAuto);
+            myAuto.start(function() {});
+        }
+    }
+});
+
+$("#intensitystop").click(function() {
+    nextMeta = function() {};
+    stopBags(activeBags.slice(0), function() {
+        $(".sparses").removeClass("btn-success");
+        $(".sparses").addClass("btn-primary");
+    });
+});
+
 var iterateBags = function(aBags) {
     if (0 < aBags.length) {
         aBags.shift().step(function() {
             iterateBags(aBags);
         });
     } else {}
-}
+};
 
 var lastTime = window.performance.now();
 
@@ -161,9 +218,11 @@ var runAutomata = function() {
         iterateBags(activeBags.slice(0));
         for (var i = activeBags.length - 1; i >= 0; i--) {
             if (!activeBags[i].running) {
+                runningList.splice(runningList.indexOf(activeBags[i].bag_num), 1);
+                nextMeta();
                 activeBags.splice(i, 1);
             }
-        };
+        }
     }
     window.requestAnimationFrame(runAutomata);
 };
@@ -173,9 +232,9 @@ window.requestAnimationFrame(runAutomata);
 var stopBags = function(aBags, done) {
     if (0 < aBags.length) {
         aBags.shift().stop(function() {
-            stopBags(aBags,done);
+            stopBags(aBags, done);
         });
     } else {
         done();
     }
-}
+};

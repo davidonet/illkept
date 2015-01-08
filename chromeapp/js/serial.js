@@ -53,7 +53,7 @@ var onGetDevices = function(ports) {
 
 var onConnect = function(connectionInfo) {
     console.log('onConnect');
-    if (connectionInfo != undefined) {
+    if (connectionInfo !== undefined) {
         aConnectionId = connectionInfo.connectionId;
     }
     $("#connectbox").modal('hide');
@@ -62,7 +62,7 @@ var onConnect = function(connectionInfo) {
         "dtr": true
     }, function() {
         console.log("reset sent");
-    })
+    });
 };
 
 $('#start').click(function() {
@@ -94,21 +94,12 @@ var onReadLine = function(line) {
                 $("#m_m0" + i).text("##");
                 $("#m_m1" + i).text("##");
             } else {
-                var v = 0;
-                if (64 < b.v) {
-                    v = b.v;
-                    if (b.v < 200)
-                        $("#m_v" + i).addClass("alert alert-danger");
-                } else {
-                    v = "max";
-                    $("#m_v" + i).addClass("text-success");
-                }
-
+                var v = b.v;
                 $("#m_v" + i).text(v);
                 $("#m_m0" + i).text(b.m0);
                 $("#m_m1" + i).text(b.m1);
             }
-        };
+        }
     }
     if (statusArduino.lastcmd) {
         $("#lastcmd").text(statusArduino.lastcmd);
@@ -120,7 +111,7 @@ var onReadLine = function(line) {
         $("#status").addClass("label-danger");
         $("#status").removeClass("label-success");
     }, 3000);
-}
+};
 
 lineBuffer = "";
 var onReceiveCallback = function(receiveInfo) {
