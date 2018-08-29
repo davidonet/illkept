@@ -147,7 +147,7 @@ $(".seqstart").click(function() {
     $(this).removeClass("btn-primary");
     $(this).addClass("btn-success disabled");
     var myAuto = new Automata(this);
-    myAuto.initSeq(16);
+    myAuto.initSeq(140);
     myAuto.start(function() {
         activeBags.push(myAuto);
     });

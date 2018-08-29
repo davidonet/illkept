@@ -122,7 +122,7 @@ void loop(void)
 
         for (byte b = 0; b < 10; b++)
         {
-            if (15000 < (millis() - lastUpdate[b] ))
+            if (20000 < (millis() - lastUpdate[b] ))
             {
                 bagStatus[b][0] = 64;
                 bagStatus[b][1] = 0;

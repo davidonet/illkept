@@ -4,40 +4,16 @@
 		"selected_items":
 		[
 			[
-				"monitor",
-				"monitoron"
+				"runn",
+				"runningList"
 			],
 			[
-				"sen",
-				"sendCombineCommand"
+				"inte",
+				"intensity"
 			],
 			[
-				"ac",
-				"activeBags"
-			],
-			[
-				"reamin",
-				"remaining"
-			],
-			[
-				"l",
-				"length"
-			],
-			[
-				"se",
-				"sendCombineCommand"
-			],
-			[
-				"fun",
-				"function"
-			],
-			[
-				"send",
-				"sendCommand"
-			],
-			[
-				"paddi",
-				"padding-top"
+				"last",
+				"lastUpdate"
 			],
 			[
 				"back",
@@ -116,34 +92,18 @@
 	"buffers":
 	[
 		{
-			"file": "chromeapp/main.html",
-			"settings":
-			{
-				"buffer_size": 8627,
-				"line_ending": "Unix"
-			}
-		},
-		{
 			"file": "chromeapp/js/automata.js",
 			"settings":
 			{
-				"buffer_size": 5222,
+				"buffer_size": 7217,
 				"line_ending": "Unix"
 			}
 		},
 		{
-			"file": "arduino/IKBag/IKBag.ino",
+			"file": "chromeapp/manifest.json",
 			"settings":
 			{
-				"buffer_size": 5773,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "chromeapp/js/serial.js",
-			"settings":
-			{
-				"buffer_size": 4596,
+				"buffer_size": 376,
 				"line_ending": "Unix"
 			}
 		}
@@ -151,17 +111,9 @@
 	"build_system": "",
 	"command_palette":
 	{
-		"height": 112.0,
+		"height": 392.0,
 		"selected_items":
 		[
-			[
-				"insta",
-				"Package Control: Install Package"
-			],
-			[
-				"ins",
-				"Package Control: Install Package"
-			],
 			[
 				"inst",
 				"Package Control: Install Package"
@@ -193,35 +145,39 @@
 		"/home/dolivari/dev/illkept/arduino/IKcontroler",
 		"/home/dolivari/dev/illkept/arduino/testL298",
 		"/home/dolivari/dev/illkept/chromeapp",
-		"/home/dolivari/dev/illkept/chromeapp/fonts",
+		"/home/dolivari/dev/illkept/chromeapp/css",
 		"/home/dolivari/dev/illkept/chromeapp/js"
 	],
 	"file_history":
 	[
-		"/home/dolivari/dev/illkept/chromeapp/js/serial.js",
-		"/home/dolivari/dev/illkept/arduino/IKcontroler/IKcontroler.ino",
-		"/home/dolivari/.config/sublime-text-3/Packages/JSHint Gutter/JSHint.sublime-settings",
-		"/home/dolivari/dev/illkept/chromeapp/css/main.css",
-		"/home/dolivari/dev/illkept/chromeapp/js/main.js",
+		"/home/dolivari/dev/illkept/chromeapp/manifest.json",
 		"/home/dolivari/dev/illkept/chromeapp/js/ui.js",
 		"/home/dolivari/dev/illkept/chromeapp/main.html",
-		"/home/dolivari/dev/illkept/arduino/IKBag/IKBag.ino",
-		"/home/dolivari/.config/sublime-text-3/Packages/SublimeAStyleFormatter/Default (Linux).sublime-keymap",
-		"/home/dolivari/.config/sublime-text-3/Packages/User/Default (Linux).sublime-keymap",
 		"/home/dolivari/.config/sublime-text-3/Packages/HTML-CSS-JS Prettify/HTMLPrettify.sublime-settings",
+		"/home/dolivari/.config/sublime-text-3/Packages/HTML-CSS-JS Prettify/Default (Linux).sublime-keymap",
+		"/home/dolivari/.config/sublime-text-3/Packages/User/Default (Linux).sublime-keymap",
+		"/home/dolivari/.config/sublime-text-3/Packages/Default/Default (Linux).sublime-keymap",
+		"/home/dolivari/dev/illkept/chromeapp/js/serial.js",
+		"/home/dolivari/.config/sublime-text-3/Packages/JSHint Gutter/.jshintrc",
+		"/home/dolivari/dev/illkept/arduino/IKcontroler/IKcontroler.ino",
+		"/home/dolivari/dev/illkept/chromeapp/js/main.js",
+		"/home/dolivari/dev/illkept/arduino/IKBag/IKBag.ino",
+		"/home/dolivari/dev/agnesrosse/js/main.js",
+		"/mnt/spare/Dropbox/Partages/partageDavidJerome/LeProblemeDeLAnge/testRendu3D/rendu3d.ocs",
 		"/run/user/1000/gvfs/sftp:host=sftp.dc0.gpaas.net,user=2108093/vhosts/www.montpellierlab.fr/htdocs/wp-content/themes/oneengine/style.css",
 		"/run/user/1000/gvfs/sftp:host=sftp.dc0.gpaas.net,user=2108093/vhosts/www.montpellierlab.fr/htdocs/wp-content/themes/oneengine/js/main.js",
 		"/run/user/1000/gvfs/ftp:host=ftp.david-o.net,user=davido/www/index.html",
 		"/mnt/spare/Dropbox/Projects/AudreyMartin/cuve.svg",
 		"/mnt/spare/Dropbox/Projects/SelmaLepart/RED/p3_inkscape.svg",
 		"/run/user/1000/gvfs/sftp:host=sftp.dc0.gpaas.net,user=1516282/vhosts/www.deslies.org/htdocs/index.html",
-		"/home/dolivari/dev/illkept/chromeapp/manifest.json",
 		"/home/dolivari/dev/editedclock/chromeapp/main.js",
 		"/home/dolivari/dev/illkept/chromeapp/background.js",
 		"/home/dolivari/dev/editedclock/chromeapp/serial.js",
 		"/home/dolivari/dev/illkept/chromeapp/css/bootstrap-slider.css",
+		"/home/dolivari/dev/illkept/chromeapp/css/main.css",
 		"/home/dolivari/dev/editedclock/chromeapp/main.html",
 		"/mnt/spare/Dropbox/Partages/partageDavidAgnès/auzoo.xml",
+		"/home/dolivari/.config/sublime-text-3/Packages/JSHint Gutter/JSHint.sublime-settings",
 		"/home/dolivari/dev/illkept/chromeapp/css/bootstrap.min.css",
 		"/home/dolivari/dev/apimtnlab/counter.js",
 		"/home/dolivari/dev/apimtnlab/www/counters/js/main.js",
@@ -235,7 +191,7 @@
 	],
 	"find":
 	{
-		"height": 34.0
+		"height": 36.0
 	},
 	"find_in_files":
 	{
@@ -250,7 +206,11 @@
 		"case_sensitive": false,
 		"find_history":
 		[
-			">\n",
+			"sparsestart",
+			"\"ctrl+shift+h",
+			"\"ctrl+shift+f",
+			"\"ctrl+shift+h",
+			"bag_num =",
 			"unConnected",
 			"'",
 			"'\n"
@@ -272,112 +232,24 @@
 	"groups":
 	[
 		{
-			"selected": 2,
+			"selected": 1,
 			"sheets":
 			[
 				{
 					"buffer": 0,
-					"file": "chromeapp/main.html",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 8627,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								6412,
-								6412
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/HTML/HTML.tmLanguage",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 2260.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 3,
-					"type": "text"
-				},
-				{
-					"buffer": 1,
 					"file": "chromeapp/js/automata.js",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 5222,
+						"buffer_size": 7217,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								4111,
-								4111
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/JavaScript/JavaScript.tmLanguage"
-						},
-						"translation.x": 0.0,
-						"translation.y": 2760.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 1,
-					"type": "text"
-				},
-				{
-					"buffer": 2,
-					"file": "arduino/IKBag/IKBag.ino",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 5773,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								3804,
-								3804
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/C++/C++.tmLanguage",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": -0.0,
-						"translation.y": 3300.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 0,
-					"type": "text"
-				},
-				{
-					"buffer": 3,
-					"file": "chromeapp/js/serial.js",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 4596,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								3414,
-								3414
+								4572,
+								4572
 							]
 						],
 						"settings":
@@ -387,10 +259,40 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 1580.0,
+						"translation.y": 2464.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 2,
+					"stack_index": 1,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "chromeapp/manifest.json",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 376,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								54,
+								54
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JSON.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
 					"type": "text"
 				}
 			]
@@ -446,7 +348,7 @@
 	"project": "illkept.sublime-project",
 	"replace":
 	{
-		"height": 98.0
+		"height": 42.0
 	},
 	"save_all_on_build": true,
 	"select_file":
@@ -481,7 +383,7 @@
 	"show_open_files": false,
 	"show_tabs": true,
 	"side_bar_visible": true,
-	"side_bar_width": 307.0,
+	"side_bar_width": 262.0,
 	"status_bar_visible": true,
 	"template_settings":
 	{
